@@ -26,5 +26,10 @@ namespace OdeToFood.Data.Services
         {
             return restaurants.OrderBy(o => o.Name);
         }
+
+        public Restaurant GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
