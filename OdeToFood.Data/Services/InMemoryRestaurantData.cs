@@ -24,7 +24,7 @@ namespace OdeToFood.Data.Services
 
         public IEnumerable<Restaurant> GetAll()
         {
-            return restaurants;
+            return restaurants.OrderBy(o => o.Name);
         }
     }
 }

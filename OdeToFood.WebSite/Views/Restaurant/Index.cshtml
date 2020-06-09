@@ -1,7 +1,26 @@
-﻿
+﻿@model IEnumerable<OdeToFood.Data.Model.Restaurant>
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Lista de Restaurantes</h2>
+<div class="post">
+    <h2 class="title"><a href="#">Lista de Restaurantes</a></h2>
+    <p class="byline">Hay un total de: @Enumerable.Count(Model) Restaurantes </p>
+    <div class="entry">
+        <p>
 
+        </p>
+    </div>
+
+    <div>
+        <h2 class="categories"> Restaurantes</h2>
+
+        <ul>
+            @foreach (var item in Model)
+            {
+                <li>@item.Name </li>
+            }
+        </ul>
+
+    </div>
+</div>
