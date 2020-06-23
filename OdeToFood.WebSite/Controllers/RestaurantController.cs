@@ -1,4 +1,5 @@
-﻿using OdeToFood.Data.Services;
+﻿using OdeToFood.Data.Model;
+using OdeToFood.Data.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace OdeToFood.WebSite.Controllers
 
     public class RestaurantController : Controller
     {
-        private IRestaurantData db;
+        private OdeToFood.Data.Services.BaseDataService<Restaurant> db;
 
         public RestaurantController()
         {
@@ -20,7 +21,7 @@ namespace OdeToFood.WebSite.Controllers
 
         public ActionResult Index()
         {
-            var list = db.GetAll();
+            var list = db.Get();
             return View(list);
         }
 
