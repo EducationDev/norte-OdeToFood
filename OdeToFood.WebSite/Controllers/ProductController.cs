@@ -11,6 +11,7 @@ using OdeToFood.WebSite.Services;
 
 namespace OdeToFood.WebSite.Controllers
 {
+    [Authorize]
     public class ProductController : BaseController
     {
         private readonly BaseDataService<Product> MyContext = new BaseDataService<Product>();

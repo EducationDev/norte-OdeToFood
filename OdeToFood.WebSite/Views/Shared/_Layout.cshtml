@@ -21,8 +21,16 @@
             <ul>
                 <li class="active"><a href="/">Home</a></li>
                 <li><a href="/Restaurant/">Restaurantes</a></li>
-                <li><a href="/Artist/">Profesionales</a></li>
-                <li><a href="/Product/">Productos</a></li>
+                @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                {
+                    <li><a href="/Artist/">Profesionales</a></li>
+                    <li><a href="/Product/">Productos</a></li>
+                }
+                @if (Request.IsAuthenticated && User.IsInRole("User"))
+                {
+                    <li><a href="/Shop/">Comprar</a></li>
+                }
+
 
             </ul>
             @Html.Partial("_LoginPartial")
